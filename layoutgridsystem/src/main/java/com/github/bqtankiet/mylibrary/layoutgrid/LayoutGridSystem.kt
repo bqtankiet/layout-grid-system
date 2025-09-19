@@ -8,35 +8,36 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.github.bqtankiet.layoutgridsystem.column.ColumnConfig
 import com.github.bqtankiet.layoutgridsystem.column.ColumnSystem
+import com.github.bqtankiet.layoutgridsystem.guideline.GuidelineConfig
 import com.github.bqtankiet.layoutgridsystem.guideline.GuidelineSystem
+import com.github.bqtankiet.layoutgridsystem.row.RowConfig
 import com.github.bqtankiet.layoutgridsystem.row.RowSystem
 
 @Composable
 fun LayoutGridSystem(
     modifier: Modifier = Modifier,
-    config: LayoutGridConfig = LayoutGridConfig(),
+    column: ColumnConfig = ColumnConfig(),
+    row: RowConfig = RowConfig(),
+    showGuideline: Boolean = GuidelineConfig.VISIBLE,
 ) {
-    Box( // outer line (red)
+    Box(
         modifier = modifier
             .fillMaxSize()
-//            .padding(DeviceProperty.Padding.all)
             .background(Color.Transparent)
     ) {
         // columns
-        if (config.columns > 0) ColumnSystem(config.columns, config.columnGutter)
+        if (column.count > 0) ColumnSystem(column)
         // rows
-        if (config.rowHeight > 0.dp) RowSystem(config.rowHeight, config.rowGutter)
+        if (row.height > 0.dp) RowSystem(row)
         // guidelines
-        if (config.showGuideline) GuidelineSystem()
+        if (showGuideline) GuidelineSystem()
     }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewGuideline() {
-    val layoutGridConfig = LayoutGridConfig(
-        showGuideline = true
-    )
-    LayoutGridSystem(config = layoutGridConfig)
+    LayoutGridSystem()
 }

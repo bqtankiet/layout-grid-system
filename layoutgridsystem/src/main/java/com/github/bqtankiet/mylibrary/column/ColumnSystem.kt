@@ -9,34 +9,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.unit.Dp
-import com.github.bqtankiet.layoutgridsystem.common.Padding
 
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun ColumnSystem(
-    columns: Int,
-    colGutter: Dp
+    config: ColumnConfig = ColumnConfig(),
 ) {
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = Padding.SCREEN)
+            .padding(horizontal = config.margin)
     ) {
-        if (columns <= 0) return@BoxWithConstraints
+        if (config.count <= 0) return@BoxWithConstraints
 
-        val totalGutter = colGutter * (columns - 1)
-        val columnWidth = (maxWidth - totalGutter) / columns
+        val totalGutter = config.gutter * (config.count - 1)
+        val columnWidth = (maxWidth - totalGutter) / config.count
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             val colWidthPx = columnWidth.toPx()
-            val gutterPx = colGutter.toPx()
+            val gutterPx = config.gutter.toPx()
 
-            repeat(columns) { i ->
+            repeat(config.count) { i ->
                 val left = i * (colWidthPx + gutterPx)
                 drawRect(
-                    color = ColumnConfig.COLOR,
+                    color = config.color,
                     topLeft = Offset(left, 0f),
                     size = Size(colWidthPx, size.height)
                 )

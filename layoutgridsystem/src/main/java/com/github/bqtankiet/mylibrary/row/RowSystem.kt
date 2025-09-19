@@ -12,29 +12,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.unit.Dp
 import kotlin.math.ceil
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun RowSystem(
-    rowHeight: Dp,
-    rowGutter: Dp
+    config: RowConfig = RowConfig(),
 ) {
     BoxWithConstraints(
-        modifier = Modifier.fillMaxSize().padding(WindowInsets.systemBars.asPaddingValues())
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(WindowInsets.systemBars.asPaddingValues())
+            .padding(top = config.offset)
     ) {
-        val totalRowHeight = rowHeight + rowGutter
+        val totalRowHeight = config.height + config.gutter
         val rows = ceil(maxHeight / totalRowHeight).toInt()
 
         Canvas(modifier = Modifier.fillMaxSize()) {
-            val rowHeightPx = rowHeight.toPx()
-            val rowGutterPx = rowGutter.toPx()
+            val rowHeightPx = config.height.toPx()
+            val rowGutterPx = config.gutter.toPx()
 
             repeat(rows) { i ->
                 val top = i * (rowHeightPx + rowGutterPx)
                 drawRect(
-                    color = RowConfig.COLOR,
+                    color = config.color,
                     topLeft = Offset(0f, top),
                     size = Size(size.width, rowHeightPx)
                 )
