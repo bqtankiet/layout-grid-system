@@ -64,7 +64,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.bqtankiet"
                 artifactId = "layout-grid-system"
-                version = "v2025.1.0"
+                version = "v2025.1.2"
             }
         }
     }
