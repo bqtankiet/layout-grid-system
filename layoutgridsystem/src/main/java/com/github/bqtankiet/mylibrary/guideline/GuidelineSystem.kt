@@ -2,7 +2,6 @@ package com.github.bqtankiet.layoutgridsystem.guideline
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -15,8 +14,8 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.bqtankiet.layoutgridsystem.common.Padding
-import com.github.bqtankiet.layoutgridsystem.common.Padding.toPx
+import com.github.bqtankiet.layoutgridsystem.common.SystemDimens
+import com.github.bqtankiet.layoutgridsystem.common.SystemDimens.toPx
 
 /**
  * Composable that draws a guideline system overlay for UI layout debugging.
@@ -29,16 +28,15 @@ fun GuidelineSystem() {
     val edgeBackgroundAlpha = GuidelineConfig.ALPHA
 
     // Device dimensions and padding
-    val topPadding = Padding.System.top.toPx()
-    val bottomPadding = Padding.System.bottom.toPx()
-    val screenPadding = Padding.SCREEN.toPx()
+    val topPadding = SystemDimens.Padding.top.toPx()
+    val bottomPadding = SystemDimens.Padding.bottom.toPx()
+    val screenPadding = SystemDimens.SCREEN_PADDING.toPx()
 
     // Calculated dimensions
     val topBarHeight = GuidelineConfig.TOP_BAR_HEIGHT.toPx()
     val navHeight = GuidelineConfig.NAVIGATION_HEIGHT.toPx()
     val navPadding = GuidelineConfig.NAVIGATION_PADDING.toPx()
-    val fabPadding = GuidelineConfig.FLOATING_BUTTON_TO_BOTTOM.toPx()
-
+    val fabPadding = GuidelineConfig.FLOATING_BUTTON_LINE_TO_BOTTOM.toPx()
     Canvas(modifier = Modifier.fillMaxSize()) {
         val deviceWidth = size.width
         val deviceHeight = size.height
@@ -68,9 +66,6 @@ fun GuidelineSystem() {
             topPadding,
             deviceWidth,
             size.height - bottomPadding,
-            contentWidth,
-            contentHeight,
-            lineStroke
         )
     }
 }
@@ -109,7 +104,7 @@ private fun DrawScope.drawTopBar(
 ) {
     drawRect(
         style = stroke,
-        color = Color.Green,
+        color = Color.Blue,
         size = Size(deviceWidth, topBarHeight),
         topLeft = Offset(0f, topPadding)
     )
@@ -144,7 +139,7 @@ private fun DrawScope.drawNavigationBar(
     stroke: Stroke
 ) {
     drawRect(
-        color = Color.Green,
+        color = Color.Blue,
         topLeft = Offset(0f, deviceHeight - navHeight - bottomPadding - navPadding),
         size = Size(deviceWidth, navHeight),
         style = stroke
@@ -182,9 +177,6 @@ private fun DrawScope.drawPaddingGuidelines(
     topPadding: Float,
     deviceWidth: Float,
     deviceHeight: Float,
-    contentWidth: Float,
-    contentHeight: Float,
-    stroke: Stroke
 ) {
     drawLine(
         color = Color.Red,
@@ -209,38 +201,6 @@ private fun DrawScope.drawPaddingGuidelines(
         start = Offset(0f, deviceHeight),
         end = Offset(deviceWidth, deviceHeight),
         strokeWidth = 2f
-    )
-
-//    // Left + Right padding
-//    drawRect(
-//        color = Color.Red,
-//        topLeft = Offset(screenPadding, 0f),
-//        size = Size(contentWidth, deviceHeight),
-//        style = stroke
-//    )
-    // Top + Bottom padding
-//    drawRect(
-//        style = stroke,
-//        color = Color.Red,
-//        size = Size(deviceWidth, contentHeight),
-//        topLeft = Offset(0f, topPadding)
-//    )
-}
-
-/**
- * Draws the screen edge outline.
- */
-private fun DrawScope.drawScreenEdge(
-    deviceWidth: Float,
-    deviceHeight: Float,
-    topPadding: Float,
-    stroke: Stroke
-) {
-    drawRect(
-        style = stroke,
-        color = Color.Red,
-        size = Size(deviceWidth, deviceHeight),
-        topLeft = Offset(0f, topPadding)
     )
 }
 

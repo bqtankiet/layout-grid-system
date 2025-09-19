@@ -7,19 +7,17 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 
-object Padding {
+object SystemDimens {
 
-    val REGULAR = 8.dp
-    val MEDIUM = 16.dp
-    val SCREEN = MEDIUM
+    val SCREEN_PADDING = 16.dp
 
-    object System {
-
+    object Padding {
         val systemBars: WindowInsets
             @Composable get() = WindowInsets.Companion.systemBars
 
