@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.column
+package com.github.bqtankiet.layoutgridsystem.column
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Canvas
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.unit.Dp
-import io.github.bqtankiet.layoutgridsystem.common.Padding
+import com.github.bqtankiet.layoutgridsystem.common.Padding
 
 
 @SuppressLint("UnusedBoxWithConstraintsScope")

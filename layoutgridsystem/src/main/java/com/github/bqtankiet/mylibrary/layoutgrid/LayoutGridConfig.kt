@@ -1,9 +1,9 @@
-package io.github.bqtankiet.layoutgridsystem.layoutgrid
+package com.github.bqtankiet.layoutgridsystem.layoutgrid
 
 import androidx.compose.ui.unit.Dp
-import io.github.bqtankiet.layoutgridsystem.column.ColumnConfig
-import io.github.bqtankiet.layoutgridsystem.guideline.GuidelineConfig
-import io.github.bqtankiet.layoutgridsystem.row.RowConfig
+import com.github.bqtankiet.layoutgridsystem.column.ColumnConfig
+import com.github.bqtankiet.layoutgridsystem.guideline.GuidelineConfig
+import com.github.bqtankiet.layoutgridsystem.row.RowConfig
 
 data class LayoutGridConfig(
     val showGuideline: Boolean = GuidelineConfig.VISIBLE,

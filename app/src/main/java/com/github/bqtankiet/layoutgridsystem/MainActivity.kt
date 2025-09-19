@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem
+package com.github.bqtankiet.layoutgridsystem
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import io.github.bqtankiet.layoutgridsystem.layoutgrid.LayoutGridSystem
+import com.github.bqtankiet.layoutgridsystem.layoutgrid.LayoutGridSystem
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

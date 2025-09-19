@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.common
+package com.github.bqtankiet.layoutgridsystem.common
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets

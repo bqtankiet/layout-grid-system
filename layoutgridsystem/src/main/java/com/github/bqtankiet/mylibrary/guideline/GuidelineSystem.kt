@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.guideline
+package com.github.bqtankiet.layoutgridsystem.guideline
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,8 +15,8 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.tooling.preview.Preview
-import io.github.bqtankiet.layoutgridsystem.common.Padding
-import io.github.bqtankiet.layoutgridsystem.common.Padding.toPx
+import com.github.bqtankiet.layoutgridsystem.common.Padding
+import com.github.bqtankiet.layoutgridsystem.common.Padding.toPx
 
 /**
  * Composable that draws a guideline system overlay for UI layout debugging.
@@ -250,7 +250,5 @@ private fun DrawScope.drawScreenEdge(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun PreviewGuidelineSystem() {
-    MaterialTheme {
-        GuidelineSystem()
-    }
+    GuidelineSystem()
 }

@@ -1,0 +1,6 @@
+jdk:
+  - openjdk17
+
+android:
+  gradle:
+    wrapper: true

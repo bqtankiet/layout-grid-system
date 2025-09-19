@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.layoutgrid
+package com.github.bqtankiet.layoutgridsystem.layoutgrid
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import io.github.bqtankiet.layoutgridsystem.column.ColumnSystem
-import io.github.bqtankiet.layoutgridsystem.guideline.GuidelineSystem
-import io.github.bqtankiet.layoutgridsystem.row.RowSystem
+import com.github.bqtankiet.layoutgridsystem.column.ColumnSystem
+import com.github.bqtankiet.layoutgridsystem.guideline.GuidelineSystem
+import com.github.bqtankiet.layoutgridsystem.row.RowSystem
 
 @Composable
 fun LayoutGridSystem(

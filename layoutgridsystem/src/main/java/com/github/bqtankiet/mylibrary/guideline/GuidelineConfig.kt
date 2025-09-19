@@ -1,8 +1,7 @@
-package io.github.bqtankiet.layoutgridsystem.guideline
+package com.github.bqtankiet.layoutgridsystem.guideline
 
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import io.github.bqtankiet.layoutgridsystem.common.Padding.REGULAR
 
 object GuidelineConfig {
     val VISIBLE = true
