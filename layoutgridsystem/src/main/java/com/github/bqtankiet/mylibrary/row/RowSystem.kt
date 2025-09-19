@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.row
+package com.github.bqtankiet.layoutgridsystem.row
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Canvas
@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.unit.Dp
-import io.github.bqtankiet.layoutgridsystem.layoutgrid.LayoutGridConfig
 import kotlin.math.ceil
 
 @SuppressLint("UnusedBoxWithConstraintsScope")

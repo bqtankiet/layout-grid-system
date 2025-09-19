@@ -1,4 +1,4 @@
-package io.github.bqtankiet.layoutgridsystem.row
+package com.github.bqtankiet.layoutgridsystem.row
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp

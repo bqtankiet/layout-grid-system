@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LayoutGridSystem"
 include(":app")
+include(":layoutgridsystem")
